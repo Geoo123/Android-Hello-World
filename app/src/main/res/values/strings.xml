@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Hello GAF</string>
     <string name="action_settings">Settings</string>
+    <string name="hello_lume">Hello lume</string>
+    <string name="ceva">ceva</string>
+    <string name="go">Go</string>
 </resources>

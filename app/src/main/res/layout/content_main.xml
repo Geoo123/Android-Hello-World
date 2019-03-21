@@ -1,20 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main">
+    android:layout_width="match_parent"
+    android:layout_marginTop="60dp"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        >
+        <TextView
 
-</android.support.constraint.ConstraintLayout>
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:background="@color/orange"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:text="orange TextView" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:background="@color/green"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:text="green textview"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:background="@color/blue"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            android:text="blue textView"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/the_button"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:background="@color/green"
+            android:text="Green button"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_background"/>
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:background="@color/blue"
+            android:text="Blue button"/>
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/orange"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:text="This is an edit text"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="20dp"
+        android:background="@color/orange"
+        android:hint="hint for another edit text"
+        android:text="This is another edit text"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:text="Notify me :)"
+            android:background="@color/blue"/>
+
+        <Switch
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blue"
+            android:text="Auto backup"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/green"
+            android:stepSize="0.5"
+            android:numStars="5"
+            android:rating="2.5"/>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+                android:text="yes"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+                android:text="no"/>
+        </RadioGroup>
+
+    </LinearLayout>
+</LinearLayout>
