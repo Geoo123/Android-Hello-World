@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hellogaf">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,8 +15,30 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
+            android:name=".Fragments.Presentation"
+            android:label="Short Description"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".curs8.Login"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".curs8.RetrofitTest"
+            android:label="@string/title_activity_retrofit_test"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".Fragments.LoadImages"
+            android:label="@string/title_activity_load_images"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".curs9.DataStorageActivity"
+            android:label="@string/title_activity_data_storage"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Fragments.Booking"
+            android:label="Login"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,6 +46,56 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Fragments.List"
+            android:label="Favourites"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Fragments.AboutUs"
+            android:label="About Us"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Fragments.Gallery"
+            android:label="@string/title_activity_gallery"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Fragments.Start"
+            android:label="Travel Journal"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".curs6.cardview"
+            android:label="@string/title_activity_cardview"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".Fragments.TabbedActivity"
+            android:label="Gallery"
+            android:theme="@style/AppTheme.NoActionBar">
+
+    </activity>
+        <activity
+            android:name=".Fragments.DrawerActivity"
+            android:label="My Trips"
+            android:theme="@style/AppTheme.NoActionBar" >
+
+    </activity>
+        <activity
+            android:name=".Fragments.Main4Activity"
+            android:label="@string/title_activity_main4"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".curs5.Main3Activity"
+            android:label="@string/title_activity_main3"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".curs5.Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

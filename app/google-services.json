@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "242105221098",
+    "firebase_url": "https://hellogaf-3fd5a.firebaseio.com",
+    "project_id": "hellogaf-3fd5a",
+    "storage_bucket": "hellogaf-3fd5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:242105221098:android:99c6cab090c5805b",
+        "android_client_info": {
+          "package_name": "com.example.hellogaf"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "242105221098-nhco2dqanjrq9uhlag1ujfdrfp4sjiql.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvS5HVgZMTtNT8r8EGaGQdB4LGY0fGXbQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "242105221098-nhco2dqanjrq9uhlag1ujfdrfp4sjiql.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,15 +4,38 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.hellogaf.Adapters.UserListAdapters;
+import com.example.hellogaf.Models.UserModels;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class MainActivity extends AppCompatActivity {
+
+    private Spinner mSpinner;
+    private ArrayAdapter<String> mSpinnerAdapter;
+    private List<String> mDataSource;
+    RecyclerView mUsersList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,28 +44,33 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(MainActivity.this, "Salutare", Toast.LENGTH_LONG).show();
-                //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                //        .setAction("Action", null).show();
-            }
-        });
 
+        mUsersList = findViewById(R.id.recycler_view);
+        RecyclerView.LayoutManager usersListLayoutManager = new LinearLayoutManager(this);
+        mUsersList.setLayoutManager(usersListLayoutManager);
 
-        Button button = findViewById(R.id.the_button);
-        button.setOnTouchListener(new View.OnTouchListener() {
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(motionEvent.getAction() == MotionEvent.ACTION_UP) {
-                    Toast.makeText(MainActivity.this, "View toouch", Toast.LENGTH_SHORT).show();
-                }
+        List<UserModels> userList = new ArrayList<>();
+        userList.add(new UserModels("Andrei", "Marinescu"));
+        userList.add(new UserModels("John", "Snow"));
+        userList.add(new UserModels("Harry", "Potter"));
+        userList.add(new UserModels("Sansa", "Stark"));
+        userList.add(new UserModels("Mihai", "Popescu"));
+        userList.add(new UserModels("Sofia", "Mann"));
+        userList.add(new UserModels("Andrei", "Marinescu"));
+        userList.add(new UserModels("John", "Snow"));
+        userList.add(new UserModels("Harry", "Potter"));
+        userList.add(new UserModels("Sansa", "Stark"));
+        userList.add(new UserModels("Mihai", "Popescu"));
+        userList.add(new UserModels("Sofia", "Mann"));
+        userList.add(new UserModels("Andrei", "Marinescu"));
+        userList.add(new UserModels("John", "Snow"));
+        userList.add(new UserModels("Harry", "Potter"));
+        userList.add(new UserModels("Sansa", "Stark"));
+        userList.add(new UserModels("Mihai", "Popescu"));
+        userList.add(new UserModels("Sofia", "Mann"));
 
-                    return false;
-            }
-        });
-
+        UserListAdapters listAdapter = new UserListAdapters(userList);
+        mUsersList.setAdapter(listAdapter);
 
     }
 
@@ -67,4 +95,6 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

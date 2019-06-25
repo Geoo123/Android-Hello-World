@@ -4,4 +4,49 @@
     <string name="hello_lume">Hello lume</string>
     <string name="ceva">ceva</string>
     <string name="go">Go</string>
+    <string name="login">login</string>
+    <string name="i_accept_t_c"><![CDATA[I accept T&C]]></string>
+    <string name="lorem">MMGY Global is a $55 million marketing communications and technology company with over 400 colleagues across 11 global offices. As the world’s largest integrated marketing company specializing in the travel, tourism and hospitality industries, inspiring people to go places is more than just a line – it is at the core of everything we do. From telling stories that inspire consumers to travel to providing opportunities that empower our staff to grow, this mantra is driven by the mission and values we share across all MMGY Global agencies and offices.</string>
+    <string name="travel">MMGY Global is privately owned by Peninsula Capital Partners, members of the management team and individual investors including Jeff Fine, Don Montague and Peter Yesawich. As a testament to the dynamic team behind MMGY Global, Peninsula Capital Partners was awarded the prestigious ACG Detroit 2018 All Star Dealmaker of the Year for its strides in the M and A community.</string>
+    <string name="s2">As MMGY Global’s flagship integrated marketing communications agency, MMGY delivers creative solutions driven by research and insight across the world. For nearly four decades, MMGY has offered a holistic approach to marketing strategy, from branding through deployment, to deliver measurable success.</string>
+    <string name="s3">Digital Spring is a full-service advertising, content and media solutions company for travel and tourism brands seeking marketing distribution across Europe. Based in London, Digital Spring provides a comprehensive suite of marketing services and platforms to enhance MMGY Global’s integrated offering in the U.K. and Europe.</string>
+    <string name="s4">DK Shifflet specializes in syndicated and custom market research exclusively for the travel and tourism industry. Together, MMGY Global and DK Shifflet boast the industry’s most expansive and richest historical data, dedicated to providing the highest-quality travel and traveler research.</string>
+    <string name="s5">Grifco is a leading public relations group specializing in international luxury travel and lifestyle PR. Based in London, this boutique firm features a team that specializes in providing creative solutions and storytelling for some of the highest-rated travel and hospitality brands across the globe.</string>
+    <string name="s6">With offices in Europe and the Middle East, Hills Balfour fuses a diverse range of marketing services and expertise to provide a holistic approach to public relations and marketing communications for travel and tourism brands across the globe. Our team connects clients to the most influential feeder markets, travelers and media in the world.</string>
+    <string name="XMass">Have yourself a Merry Little Christmas!
+        Let your hearts be light.
+        From now on, your troubles will be out of sight </string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_main3">Main3Activity</string>
+    <string name="title_activity_main4">Main4Activity</string>
+    <string name="loading">Loading...</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="title_activity_tabbed">TabbedActivity</string>
+    <string name="title_activity_cardview">cardview</string>
+    <string name="title_activity_start">Start</string>
+    <string name="title_activity_gallery">Gallery</string>
+    <string name="title_activity_about_us">AboutUs</string>
+    <string name="title_activity_list">List</string>
+    <string name="title_activity_list2">List2</string>
+    <string name="title_activity_booking">Booking</string>
+    <string name="title_activity_drawer_s">DrawerActivityS</string>
+    <string name="title_activity_drawer_m">DrawerActivityM</string>
+    <string name="title_activity_data_storage">DataStorageActivity</string>
+    <string name="title_activity_load_images">LoadImages</string>
+    <string name="title_activity_retrofit_test">RetrofitTest</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_presentation">Presentation</string>
 </resources>
