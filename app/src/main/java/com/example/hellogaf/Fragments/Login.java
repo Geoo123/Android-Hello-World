@@ -6,24 +6,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.hellogaf.R;
 import com.example.hellogaf.DataStorage.DataStorageHelper;
 
-import java.util.List;
 
 import static com.google.android.gms.common.internal.safeparcel.SafeParcelable.NULL;
 
 public class Login extends AppCompatActivity {
 
-    private Spinner mSpinner;
-    private ArrayAdapter<String> mSpinnerAdapter;
-    private List<String> mDataSource;
     Button save, complete;
 
     protected void onStart() {
@@ -73,8 +67,8 @@ public class Login extends AppCompatActivity {
         final EditText password = findViewById(R.id.password_input);
         password.setTransformationMethod(new AsteriskPasswordTransformationMethod());
         final Button submit = findViewById(R.id.submit_btn);
-        Button save = findViewById(R.id.save);
-        Button complete = findViewById(R.id.complete);
+        save = findViewById(R.id.save);
+        complete = findViewById(R.id.complete);
 
         save.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -119,8 +113,8 @@ public class Login extends AppCompatActivity {
                     isValidP = false;
                 }
 
-                if (!android.util.Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches())
-                    isValidE = false;
+//                if (!android.util.Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches())
+//                    isValidE = false;
 
                 if (!arrOfStr[0].equals(NULL)) {
                     if (emailAddress.compareTo(arrOfStr[0]) == 0) {
