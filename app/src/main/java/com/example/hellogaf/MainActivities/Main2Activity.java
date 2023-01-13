@@ -1,4 +1,4 @@
-package com.example.hellogaf.curs5;
+package com.example.hellogaf.MainActivities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -25,25 +25,25 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
 
     protected void onStart() {
         super.onStart();
-        Log.d("GAF", "Activity 1 onStart()");
+        Log.d("GAF", "Activity 2 onStart()");
     }
 
     protected  void onStop() {
         super.onStop();
-        Log.d("GAF", "Activity 1 onStop()");
+        Log.d("GAF", "Activity 2 onStop()");
     }
 
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("GAF", "Activity 1 onDestroy()");
+        Log.d("GAF", "Activity 2 onDestroy()");
     }
     protected void onResume() {
         super.onResume();
-        Log.d("GAF", "Activity 1 onResume()");
+        Log.d("GAF", "Activity 2 onResume()");
     }
     protected void onPause() {
         super.onPause();
-        Log.d("GAF", "Activity 1 onPause()");
+        Log.d("GAF", "Activity 2 onPause()");
     }
 
     protected void onActivityResult(
@@ -51,12 +51,12 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         int code = resultCode;
-        Log.d("GAF", "Activity 1 onActivityResult()" + resultCode);
+        Log.d("GAF", "Activity 2 onActivityResult()" + resultCode);
 
     }
-    protected void onSaveIstanceState(Bundle outState) {
+    protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        Log.d("GAF", "Activity 1 onsaveIstanceState()");
+        Log.d("GAF", "Activity 2 onSaveInstanceState()");
     }
 
     @Override

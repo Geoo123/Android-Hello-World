@@ -3,16 +3,9 @@ package com.example.hellogaf.Fragments;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.CardView;
-import android.util.Base64;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -24,16 +17,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.hellogaf.Fragments.hello_fragment;
 import com.example.hellogaf.R;
 
-import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
 import java.util.Vector;
 
@@ -48,8 +36,8 @@ public class DrawerActivity extends AppCompatActivity
     String price, rating, path, type;
     int[] favorite = new int[20];
     int pret;
-    Vector<String> web1 = new Vector<String>(20);
-    Vector<String> web2 = new Vector<String>(20);
+    Vector<String> web1 = new Vector<>(20);
+    Vector<String> web2 = new Vector<>(20);
     Vector<Bitmap> images = new Vector<>(20);
     Vector<String> paths = new Vector<>(20);
     Vector<Integer> ids = new Vector<>(20);
@@ -59,7 +47,6 @@ public class DrawerActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawer);
 
-        //Button b = findViewById(R.id.button);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         web1.add("Summer 2018" + "\n" + "London" + "\n" + "19/08/2018 - 24/08/2018" + "\n" + "3000€" + "\n" + "3.0/5.0" + "\n" + "City Break");
@@ -179,7 +166,7 @@ public class DrawerActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent redirectIntent = new Intent(DrawerActivity.this, Start.class);
+                Intent redirectIntent = new Intent(DrawerActivity.this, NewTrip.class);
                 if(redirectIntent.resolveActivity((getPackageManager()))!= null) {
                     startActivityForResult(redirectIntent, 200);
                 }
@@ -194,13 +181,6 @@ public class DrawerActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-
-        /*b.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                setResult(205);
-                finish();
-            }
-        });*/
     }
 
     @Override

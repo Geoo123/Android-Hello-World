@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             app:srcCompat="@drawable/travel1" />
+
          <TextView
              android:layout_marginTop="5dp"
             android:layout_width="match_parent"
@@ -33,6 +34,7 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <EditText
                 android:id="@+id/email_input"
                 android:layout_width="match_parent"
@@ -50,7 +52,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/phone_input"
+                android:id="@+id/password_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
@@ -66,14 +68,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-
-         <!-- <CheckBox
-            android:id="@+id/check"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="@string/i_accept_t_c"/> -->
 
             <Button
                 android:id="@+id/save"
@@ -103,9 +97,6 @@
                 android:text="Submit"
                 android:textAllCaps="true"
                 android:textSize="15sp" />
-
-
-
 
         </LinearLayout>
 

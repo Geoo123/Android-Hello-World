@@ -1,4 +1,4 @@
-package com.example.hellogaf.curs9;
+package com.example.hellogaf.DataStorage;
 
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;

@@ -1,4 +1,4 @@
-package com.example.hellogaf.curs9;
+package com.example.hellogaf.DataStorage;
 
 import android.content.Context;
 import android.content.SharedPreferences;

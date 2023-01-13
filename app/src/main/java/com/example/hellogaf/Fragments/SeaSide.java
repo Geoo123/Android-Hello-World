@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.example.hellogaf.R;
 
-public class hello_fragment1 extends Fragment {
+public class SeaSide extends Fragment {
 
     public View onCreateView(
             @Nullable LayoutInflater inflater,

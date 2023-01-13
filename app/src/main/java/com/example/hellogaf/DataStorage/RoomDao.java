@@ -1,4 +1,4 @@
-package com.example.hellogaf.curs9;
+package com.example.hellogaf.DataStorage;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
@@ -6,10 +6,6 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Transaction;
 import android.arch.persistence.room.Update;
-
-import com.example.hellogaf.Fragments.List;
-import com.example.hellogaf.curs9.ProjectAndAllTasksModel;
-import com.example.hellogaf.curs9.ProjectModel;
 
 @Dao
 public interface RoomDao {

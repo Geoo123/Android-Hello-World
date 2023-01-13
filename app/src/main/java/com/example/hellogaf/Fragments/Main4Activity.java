@@ -1,18 +1,15 @@
 package com.example.hellogaf.Fragments;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import com.example.hellogaf.R;
 
 public class Main4Activity extends AppCompatActivity {
 
-    hello_fragment mFragment;
+    CityBreak mFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +18,7 @@ public class Main4Activity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mFragment = new hello_fragment();
+        mFragment = new CityBreak();
 
         Bundle fragmentData = new Bundle();
         fragmentData.putString("foo", "bar");

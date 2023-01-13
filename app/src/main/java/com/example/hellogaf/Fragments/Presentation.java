@@ -1,5 +1,6 @@
 package com.example.hellogaf.Fragments;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -10,10 +11,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Base64;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hellogaf.MainActivity;
 import com.example.hellogaf.R;
 
 import java.io.FileNotFoundException;
@@ -28,6 +31,7 @@ public class Presentation extends AppCompatActivity {
     Integer id2;
     String[] arrOfStr;
     Bitmap bitmap;
+    Button reviews;
 
     public Bitmap StringToBitMap(String encodedString){
         try {
@@ -54,7 +58,7 @@ public class Presentation extends AppCompatActivity {
         text4 = findViewById(R.id.price);
         text5 = findViewById(R.id.rating);
         text6 = findViewById(R.id.type);
-
+        reviews = findViewById(R.id.reviews_button);
 
 
         Bundle bundle = getIntent().getExtras();
@@ -76,12 +80,6 @@ public class Presentation extends AppCompatActivity {
                 bitmap = BitmapFactory.decodeResource(getResources(), id2);
             }
         arrOfStr = str.split("\n", 6);
-        /*Toast.makeText(
-                Presentation.this,
-                str + " " + arrOfStr[0] + " " + arrOfStr[1] + " " + arrOfStr[2] + " " + id,
-                Toast.LENGTH_LONG).show();
-        */
-        //Bitmap bitmap = StringToBitMap(id);
         im1.setImageBitmap(bitmap);
 
         name = arrOfStr[0];
@@ -98,15 +96,15 @@ public class Presentation extends AppCompatActivity {
         text5.setText(rating);
         text6.setText(type);
 
-
-        /*FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        reviews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent redirectIntent = new Intent(Presentation.this, MainActivity.class);
+                if(redirectIntent.resolveActivity((getPackageManager()))!= null) {
+                    startActivityForResult(redirectIntent, 200);
+                }
             }
-        });*/
+        });
     }
 
 }

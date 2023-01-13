@@ -1,6 +1,5 @@
 package com.example.hellogaf.Fragments;
 
-import android.Manifest;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -11,20 +10,14 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -33,24 +26,20 @@ import android.widget.RadioButton;
 import android.widget.RatingBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.hellogaf.R;
-import com.example.hellogaf.curs5.Main3Activity;
-import com.example.hellogaf.curs6.cardview;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.Calendar;
 
-import static com.example.hellogaf.curs6.cardview.REQUEST_CAMERA_PERMISSIONS;
-import static com.example.hellogaf.curs6.cardview.REQUEST_IMAGE_CAPTURE;
+import static com.example.hellogaf.CardView.CardView.REQUEST_CAMERA_PERMISSIONS;
+import static com.example.hellogaf.CardView.CardView.REQUEST_IMAGE_CAPTURE;
 
-public class Start extends AppCompatActivity implements View.OnClickListener{
+public class NewTrip extends AppCompatActivity implements View.OnClickListener{
 
-    private static final String TAG = "Start";
+    private static final String TAG = NewTrip.class.getSimpleName();
     private TextView mDisplayDate, mDisplayDate1;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
     private DatePickerDialog.OnDateSetListener mDateSetListener1;
@@ -61,7 +50,7 @@ public class Start extends AppCompatActivity implements View.OnClickListener{
     String rating;
     RatingBar ratingBar;
     int prog;
-    Button bt4, bt5;
+    Button bt4;
     Bitmap bitmap;
     Bitmap imageBitmap;
     Uri targetUri;
@@ -143,7 +132,6 @@ public class Start extends AppCompatActivity implements View.OnClickListener{
         t1 = findViewById(R.id.trip_name);
         t2 = findViewById(R.id.destination);
         bt4 = findViewById(R.id.button4);
-        //bt5 = findViewById(R.id.button5);
 
         bt1 = findViewById(R.id.b1);
         bt2 = findViewById(R.id.b2);
@@ -158,17 +146,14 @@ public class Start extends AppCompatActivity implements View.OnClickListener{
             public void onProgressChanged(SeekBar seekBar, int progress,
                                           boolean fromUser) {
                 prog = progress;
-                //Toast.makeText(getApplicationContext(), "seekbar progress: " + progress, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-                //Toast.makeText(getApplicationContext(),"seekbar touch started!", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                //Toast.makeText(getApplicationContext(),"seekbar touch stopped!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -213,7 +198,7 @@ public class Start extends AppCompatActivity implements View.OnClickListener{
                 int day = cal.get(Calendar.DAY_OF_MONTH);
 
                 DatePickerDialog dialog = new DatePickerDialog(
-                        Start.this,
+                        NewTrip.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                         mDateSetListener,
                         year, month, day);
@@ -240,7 +225,7 @@ public class Start extends AppCompatActivity implements View.OnClickListener{
                 int day = cal.get(Calendar.DAY_OF_MONTH);
 
                 DatePickerDialog dialog = new DatePickerDialog(
-                        Start.this,
+                        NewTrip.this,
                         android.R.style.Theme_Holo_Light_Dialog_MinWidth,
                         mDateSetListener1,
                         year, month, day);
@@ -286,17 +271,9 @@ public class Start extends AppCompatActivity implements View.OnClickListener{
         Log.d("GAF", "Activity 1 onPause()");
     }
 
-    /*protected void onActivityResult(
-            int requestCode,
-            int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        int code = resultCode;
-        Log.d("GAF", "Activity 1 onActivityResult()" + resultCode);
-
-    }*/
-    protected void onSaveIstanceState(Bundle outState) {
+    protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        Log.d("GAF", "Activity 1 onsaveIstanceState()");
+        Log.d("GAF", "Activity 1 onSaveInstanceState()");
     }
 
     @Override

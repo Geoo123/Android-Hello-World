@@ -1,14 +1,11 @@
-package com.example.hellogaf.curs8;
+package com.example.hellogaf.Login;
 
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -39,7 +36,6 @@ public class Login extends AppCompatActivity implements
 
     private GoogleApiClient mGoogleApiClient;
     private ProgressDialog mProgressDialog;
-
     private SignInButton btnSignIn;
     private Button btnSignOut, btnRevokeAccess;
     private LinearLayout llProfileLayout;
@@ -105,7 +101,7 @@ public class Login extends AppCompatActivity implements
     }
 
     private void handleSignInResult(GoogleSignInResult result) {
-        Log.d(TAG, "handleSignInResult:" + result.isSuccess());
+        Log.d(TAG, "handleSignInResult:" + result.getStatus());
         if (result.isSuccess()) {
             // Signed in successfully, show authenticated UI.
             GoogleSignInAccount acct = result.getSignInAccount();
@@ -215,6 +211,7 @@ public class Login extends AppCompatActivity implements
 
     private void updateUI(boolean isSignedIn) {
         if (isSignedIn) {
+            Log.d(TAG, "Logged");
             btnSignIn.setVisibility(View.GONE);
             btnSignOut.setVisibility(View.VISIBLE);
             btnRevokeAccess.setVisibility(View.VISIBLE);
@@ -226,6 +223,4 @@ public class Login extends AppCompatActivity implements
             llProfileLayout.setVisibility(View.GONE);
         }
     }
-
-
 }

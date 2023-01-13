@@ -1,6 +1,10 @@
 package com.example.hellogaf.Models;
 
 public class UserModels {
+    private String firstName;
+    private String grade;
+    private String review;
+
     public String getFirstName() {
         return firstName;
     }
@@ -9,21 +13,28 @@ public class UserModels {
         this.firstName = firstName;
     }
 
-    private String firstName;
-
-    public String getLastName() {
-        return lastName;
+    public String getGrade() {
+        return grade;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setGrade(String grade) {
+        this.grade = grade;
     }
 
-    private String lastName;
+    public String getReview() {
+        return review;
+    }
 
-    public UserModels (String firstName, String lastName) {
+    public void setReview(String review) {
+        this.review = review;
+    }
+
+
+
+    public UserModels (String firstName, String grade, String review) {
         this.firstName = firstName;
-        this.lastName = lastName;
+        this.grade = grade;
+        this.review = review;
     }
 
 

@@ -1,4 +1,4 @@
-package com.example.hellogaf.viewholders;
+package com.example.hellogaf.ViewHolders;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -12,18 +12,21 @@ import com.example.hellogaf.Models.UserModels;
 public class UsersViewHolder extends RecyclerView.ViewHolder {
 
     private TextView mFirstName;
-    private TextView mLastName;
+    private TextView mGrade;
+    private TextView mReview;
 
     public UsersViewHolder(@NonNull View container) {
 
         super(container);
         mFirstName = container.findViewById(R.id.user_first_name);
-        mLastName = container.findViewById(R.id.user_last_name);
+        mGrade = container.findViewById(R.id.user_grade);
+        mReview = container.findViewById(R.id.user_review);
     }
 
     public void bind(UserModels user) {
 
         mFirstName.setText(user.getFirstName());
-        mLastName.setText(user.getLastName());
+        mGrade.setText(user.getGrade());
+        mReview.setText(user.getReview());
     }
 }

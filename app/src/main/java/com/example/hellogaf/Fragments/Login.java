@@ -4,30 +4,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.hellogaf.R;
-import com.example.hellogaf.curs9.DataStorageActivity;
-import com.example.hellogaf.curs9.DataStorageHelper;
+import com.example.hellogaf.DataStorage.DataStorageHelper;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.google.android.gms.common.internal.safeparcel.SafeParcelable.NULL;
 
-public class Booking extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     private Spinner mSpinner;
     private ArrayAdapter<String> mSpinnerAdapter;
@@ -36,25 +28,25 @@ public class Booking extends AppCompatActivity {
 
     protected void onStart() {
         super.onStart();
-        Log.d("GAF", "Activity 1 onStart()");
+        Log.d("GAF", "Login onStart()");
     }
 
     protected  void onStop() {
         super.onStop();
-        Log.d("GAF", "Activity 1 onStop()");
+        Log.d("GAF", "Login onStop()");
     }
 
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("GAF", "Activity 1 onDestroy()");
+        Log.d("GAF", "Login onDestroy()");
     }
     protected void onResume() {
         super.onResume();
-        Log.d("GAF", "Activity 1 onResume()");
+        Log.d("GAF", "Login onResume()");
     }
     protected void onPause() {
         super.onPause();
-        Log.d("GAF", "Activity 1 onPause()");
+        Log.d("GAF", "Login onPause()");
     }
 
     protected void onActivityResult(
@@ -62,12 +54,12 @@ public class Booking extends AppCompatActivity {
             int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         int code = resultCode;
-        Log.d("GAF", "Activity 1 onActivityResult()" + resultCode);
+        Log.d("GAF", "Login onActivityResult()" + resultCode);
 
     }
-    protected void onSaveIstanceState(Bundle outState) {
+    protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        Log.d("GAF", "Activity 1 onsaveIstanceState()");
+        Log.d("GAF", "Login onSaveInstanceState()");
     }
 
     @Override
@@ -78,9 +70,8 @@ public class Booking extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         final EditText email = findViewById(R.id.email_input);
-        final EditText phone = findViewById(R.id.phone_input);
-        phone.setTransformationMethod(new AsteriskPasswordTransformationMethod());
-        //final CheckBox tc = findViewById(R.id.check);
+        final EditText password = findViewById(R.id.password_input);
+        password.setTransformationMethod(new AsteriskPasswordTransformationMethod());
         final Button submit = findViewById(R.id.submit_btn);
         Button save = findViewById(R.id.save);
         Button complete = findViewById(R.id.complete);
@@ -88,28 +79,25 @@ public class Booking extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String Email = email.getText().toString();
-                String pass = phone.getText().toString();
+                String pass = password.getText().toString();
                 String save_string = Email + " " + pass;
-                DataStorageHelper.saveValueInSharedPrefs(Booking.this,
+                DataStorageHelper.saveValueInSharedPrefs(Login.this,
                         "email", save_string);
 
             }
         });
 
-        String save_string = DataStorageHelper.readValueInSharedPrefs(Booking.this,
+        String save_string = DataStorageHelper.readValueInSharedPrefs(Login.this,
                 "email");
         final String[] arrOfStr = save_string.split(" ", 2);
-        //Toast.makeText(getApplicationContext(), save_string, Toast.LENGTH_LONG).show();
         email.setText(arrOfStr[0]);
         complete.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //String email = mEmail.getText().toString();
-                String save_string = DataStorageHelper.readValueInSharedPrefs(Booking.this,
+                String save_string = DataStorageHelper.readValueInSharedPrefs(Login.this,
                         "email");
                 final String[] arrOfStr = save_string.split(" ", 2);
-                //Toast.makeText(getApplicationContext(), save_string, Toast.LENGTH_LONG).show();
                 email.setText(arrOfStr[0]);
-                phone.setText(arrOfStr[1]);
+                password.setText(arrOfStr[1]);
 
             }
         });
@@ -119,71 +107,49 @@ public class Booking extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String emailAddress = email.getText().toString();
-                String phoneNumber = phone.getText().toString();
-                //boolean isAccepted = tc.isChecked();
+                String userPassword = password.getText().toString();
                 boolean isValidP = false;
                 boolean isValidE = false;
                 if (emailAddress.equals("")) {
                     email.setError("E-mail is required");
                     isValidE = false;
                 }
-                if (phoneNumber.equals("")) {
-                    phone.setError("Wrong password");
+                if (userPassword.equals("")) {
+                    password.setError("Wrong password");
                     isValidP = false;
                 }
-                //if (!isAccepted) {
-                //    isValidP = false;
-                //    isValidE = false;
-                //}
 
-
-                if (android.util.Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches() == false)
+                if (!android.util.Patterns.EMAIL_ADDRESS.matcher(emailAddress).matches())
                     isValidE = false;
 
-                //if (android.util.Patterns.PHONE.matcher(phoneNumber).matches() == false) {
-                //    isValidP = false;
-                //}
-                if (arrOfStr[0] != NULL) {
-                    Toast.makeText(
-                            Booking.this,
-                            arrOfStr[0],
-                            Toast.LENGTH_LONG).show();
+                if (!arrOfStr[0].equals(NULL)) {
                     if (emailAddress.compareTo(arrOfStr[0]) == 0) {
                         isValidE = true;
                     }
                 }
-                if (arrOfStr[1] != NULL) {
-                    Toast.makeText(
-                                  Booking.this,
-                                    arrOfStr[1],
-                                    Toast.LENGTH_LONG).show();
-                    if (phoneNumber.compareTo(arrOfStr[1]) == 0) {
+                if (!arrOfStr[1].equals(NULL)) {
+                    if (userPassword.compareTo(arrOfStr[1]) == 0) {
                         isValidP = true;
                     }
                 }
                 if (!isValidE) {
                     Toast.makeText(
-                            Booking.this,
+                            Login.this,
                             "Not a valid e-mail",
                             Toast.LENGTH_LONG).show();
                 }
                 if (!isValidP) {
-                    //String aux = phoneNumber + " " + arrOfStr[1];
-                    //Toast.makeText(
-                    //        Booking.this,
-                    //        aux,
-                    //        Toast.LENGTH_LONG).show();
                     Toast.makeText(
-                            Booking.this,
+                            Login.this,
                             "Wrong password",
                             Toast.LENGTH_LONG).show();
                 }
                 if (isValidE && isValidP) {
                     Toast.makeText(
-                            Booking.this,
+                            Login.this,
                             "Welcome back " + emailAddress,
                             Toast.LENGTH_LONG).show();
-                    Intent redirectIntent = new Intent(Booking.this, DrawerActivity.class);
+                    Intent redirectIntent = new Intent(Login.this, DrawerActivity.class);
                     redirectIntent.putExtra("username", "Geo");
                     if(redirectIntent.resolveActivity((getPackageManager()))!= null)
                         startActivityForResult(redirectIntent, 200);
@@ -191,36 +157,5 @@ public class Booking extends AppCompatActivity {
 
             }
         });
-
-
     }
-//
-
-
-
-    /*@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }*/
-
-
-
-
 }

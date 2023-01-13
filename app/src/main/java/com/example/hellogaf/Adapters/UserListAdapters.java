@@ -11,7 +11,7 @@ import com.example.hellogaf.R;
 import java.util.List;
 
 import com.example.hellogaf.Models.UserModels;
-import com.example.hellogaf.viewholders.UsersViewHolder;
+import com.example.hellogaf.ViewHolders.UsersViewHolder;
 
 public class UserListAdapters extends RecyclerView.Adapter {
 
